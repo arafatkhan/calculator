@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1 class="calculator-heading">CALCULATOR</h1>
+        <div class="display-container">
+            <span class="operator-display"></span>
+            <input type="text" class="calculator-screen" value="" disabled />
+        </div>
+        <div class="calculator-keys">
+            <button type="button" class="operator" value="+">+</button>
+            <button type="button" class="operator" value="-">-</button>
+            <button type="button" class="operator" value="*">&times;</button>
+            <button type="button" class="operator" value="/">&divide;</button>
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="0">0</button>
+            <button type="button" class="decimal" value=".">.</button>
+            <button type="button" class="all-clear" value="all-clear">AC</button>
+            <button type="button" class="equal-sign" value="=">=</button>
+        </div>
+        <p class="author">Made by Arafat Khan</p>
+    </div>
+    <script src="myscript.js"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            const validKeys = '0123456789+-*/.';
+            if (validKeys.includes(key)) {
+                document.querySelector(`button[value="${key}"]`).click();
+            } else if (key === 'Enter') {
+                document.querySelector('button.equal-sign').click();
+            } else if (key === 'Escape') {
+                document.querySelector('button.all-clear').click();
+            }
+        });
+    </script>
+</body>
+</html>
