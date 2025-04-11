@@ -8,7 +8,7 @@ const calculator = {
 function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
 
-    if (waitingForSecondOperand === true) {
+    if (waitingForSecondOperand) {
         calculator.displayValue = digit;
         calculator.waitingForSecondOperand = false;
     } else {
@@ -39,8 +39,9 @@ function handleOperator(nextOperator) {
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
 
-        if (result === Infinity || isNaN(result)) {
+        if (result === 'Error') {
             calculator.displayValue = 'Error';
+            calculator.firstOperand = null;
         } else {
             calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
             calculator.firstOperand = result;
