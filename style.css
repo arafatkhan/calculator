@@ -1,7 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #000000, #2a5298);
@@ -12,9 +13,11 @@ body {
     border: none;
     padding: 20px;
     border-radius: 20px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+    background: linear-gradient(145deg, #ffffff, #ffffff); /* Remove gray gradient */
+    box-shadow: none; /* Remove shadow */
     width: 350px;
+    margin: 20px 0; /* Add top and bottom margins */
+    margin-bottom: 20px; /* Replace auto with a fixed value */
 }
 
 .calculator-heading {
@@ -62,16 +65,16 @@ body {
 .calculator-keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 8px; /* Reduce spacing between buttons */
 }
 
 .calculator-keys button {
-    height: 60px;
-    font-size: 1.5em;
+    height: 50px; /* Reduce button height */
+    font-size: 1.2em; /* Adjust font size for smaller buttons */
     border: none;
     border-radius: 10px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    background: linear-gradient(145deg, #ffffff, #ffffff); /* Remove gray gradient */
+    box-shadow: none; /* Remove shadow */
     color: #333;
     transition: all 0.3s ease;
 }
@@ -102,6 +105,21 @@ body {
     text-align: center;
     font-size: 1em;
     margin-top: 20px;
-    color: #fff;
+    color: #636363;
     font-style: italic;
+}
+
+/* Updated footer styles for a more polished look */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px; /* Increased padding for better spacing */
+    background-color: #222; /* Darker background for a modern look */
+    color: #a8d5ba; /* Softer green for better contrast */
+    font-size: 16px; /* Slightly larger font for readability */
+    border-top: 2px solid #444; /* Thicker border for a defined separation */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
 }
